@@ -1,0 +1,27 @@
+var struct_w_p_s___location =
+[
+    [ "age", "struct_w_p_s___location.html#af0d4caf45afebff68ce1fdae79213a2d", null ],
+    [ "altitude", "struct_w_p_s___location.html#af5acd2cdc81f43935e1218fd62653b31", null ],
+    [ "bearing", "struct_w_p_s___location.html#a5de717a82daa246893bec4169a33186a", null ],
+    [ "hash", "struct_w_p_s___location.html#aeaa5f09a76555079e5f93cc3d66fd32e", null ],
+    [ "hashLength", "struct_w_p_s___location.html#a9279332b930387035debf4853240b377", null ],
+    [ "hasScore", "struct_w_p_s___location.html#a1d6043151d0d04d4e8430270281f45ae", null ],
+    [ "historicalLocationCount", "struct_w_p_s___location.html#ae897893b7a5bceb98f46fb8ee6f3fce7", null ],
+    [ "hpe", "struct_w_p_s___location.html#a244bc6fb322dcd13ec046dab5426e2e1", null ],
+    [ "id", "struct_w_p_s___location.html#ac9b2928f26f76bf49a0265272bcc0fca", null ],
+    [ "ip", "struct_w_p_s___location.html#a6b48c6f04393167012a3c809194384c2", null ],
+    [ "latitude", "struct_w_p_s___location.html#a779d4460439f778ef2b5b7d65e24ad95", null ],
+    [ "longitude", "struct_w_p_s___location.html#a740c7a283ded7f45cc02c35265d6f6ce", null ],
+    [ "nap", "struct_w_p_s___location.html#a745a73b74ee02a97f856d1d5a0bc20a3", null ],
+    [ "ncell", "struct_w_p_s___location.html#a9e9b7960b1372d5e3c65af406f3ccd70", null ],
+    [ "nlac", "struct_w_p_s___location.html#abcdae27b410340d02381c53a523cc5a4", null ],
+    [ "nsat", "struct_w_p_s___location.html#a9541c261b741aa8d4d783a3a7ddb5a09", null ],
+    [ "score", "struct_w_p_s___location.html#a712d5c54e15784f36340c71afc1f4c8a", null ],
+    [ "signature", "struct_w_p_s___location.html#a1ff566d37e6744a186286c981686f294", null ],
+    [ "signatureLength", "struct_w_p_s___location.html#ae928c2c86014a666c95ed048cde5fd5a", null ],
+    [ "speed", "struct_w_p_s___location.html#a8900714b62cf0039fc364b40562dc451", null ],
+    [ "street_address", "struct_w_p_s___location.html#adc493b2ebbb247e03f39e6a022fc62bb", null ],
+    [ "timestamp", "struct_w_p_s___location.html#af1779f4a4c88113204b1df6ca28e2584", null ],
+    [ "type", "struct_w_p_s___location.html#a806e8f597f4d7a6cffd637b7a6375186", null ],
+    [ "withIP", "struct_w_p_s___location.html#a247b79d64c96fcad3fad9b85b4f7528d", null ]
+];
