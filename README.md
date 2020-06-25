@@ -398,8 +398,8 @@ Please visit [the website](https://www.skyhook.com/patents) to see the full list
 
 ## API reference
 
-Check the [full API reference](https://skyhookwireless.github.io/skyhook-location-native/doxygen) for more information on APIs that are exposed by the SDK.
+Check the [full API reference](https://skyhookwireless.github.io/skyhook-location-native/doxygen/html) for more information on APIs that are exposed by the SDK.
 
 ## Troubleshooting
 
-For any questions, please sign into your My Skyhook account at: [https://my.skyhook.com].
+For any questions, please sign into your My Skyhook account at: [my.skyhook.com](https://my.skyhook.com).
