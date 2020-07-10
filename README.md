@@ -176,7 +176,7 @@ If you want to implement it in Objective C or Swift, refer to the [Scripting Bri
 
 #### Location authorization in macOS Catalina
 
-Due to changes in macOS Catalina, WPS API will now require that the application has obtained an authorization to determine a high precision location, such as a location based on Wi-Fi access points. If the authorization hasn't been granted, WPS API will return `WPS_ERROR_LOCATION_NOT_PERMITTED`.
+Due to changes introduced in macOS Catalina, WPS API will now require that the application has obtained an authorization to determine a high precision location, such as a location based on Wi-Fi access points. If the authorization hasn't been granted, WPS API will return `WPS_ERROR_LOCATION_NOT_PERMITTED`.
 
 The application can rely on the SDK to obtain permission automatically when needed. This will result in the SDK showing a prompt to the user when location is being determined for the first time.
 
@@ -189,7 +189,7 @@ locationManager.delegate = delegate;
 [locationManager requestAlwaysAuthorization];
 ```
 
-Note that the calling thread must have a runloop running in it for the permission request to work properly.
+Note that the calling thread must have a runloop running for the permission request to work properly.
 
 Refer to [Apple's documentation](https://developer.apple.com/documentation/corelocation/cllocationmanager/1620551-requestalwaysauthorization) for more information.
 
@@ -201,6 +201,35 @@ For commmand line apps in macOS Catalina extra steps are required to obtain the 
 * An `Info.plist` file must be placed in the same directory where the executable is located, with the `CFBundleIdentifier` and `CFBundleExecutable` fields populated
 
 Please see the [quick start project](https://github.com/SkyhookWireless/location-quick-start-native) as an example of a command line application utilizing the SDK to determine Wi-Fi based location on macOS Catalina.
+
+#### Hardened Runtime
+
+If your application is using [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime), make sure to enable access to Location in Xcode settings:
+
+* Signing & Capabilities - Hardened Runtime - Resource Access - Location
+
+The following key will be added in your `.entitlements` file:
+```xml
+    <key>com.apple.security.personal-information.location</key>
+    <true/>
+```
+
+#### App Sandbox
+
+If you application is using the [App Sandboxing](https://developer.apple.com/app-sandboxing) feature, enable the following options in Xcode settings:
+
+* Signing & Capabilities - App Sandbox - Network - Outgoing Connections (Client)
+* Signing & Capabilities - App Sandbox - App Data - Location
+
+The following keys will be added in your `.entitlements` file:
+```xml
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <key>com.apple.security.personal-information.location</key>
+    <true/>
+```
 
 ## Changelog
 
@@ -387,9 +416,10 @@ Copyright 2005-present Skyhook, Inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted subject to the following:
 
-Use and redistribution is subject to the Software License and Development Agreement, available at www.skyhookwireless.com
+Use and redistribution is subject to the Software License and Development Agreement, available at www.skyhookwireless.com.
 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Patents
