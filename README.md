@@ -13,24 +13,6 @@ Hardware:
 * Wi-Fi network card for location based on Wi-Fi networks
 * Cell modem for location based on cell networks
 
-## Reference application
-
-A reference application named `wpsapitest` is provided with the SDK package. You can run it out of the box on your system to test location determination capabilities of the SDK.
-
-One shot location call:
-```sh
-./wpsapitest -k <MY_KEY>
-```
-
-Periodic location updates every second with tiling enabled:
-```sh
-./wpsapitest -k <MY_KEY> -p 1 -t tile_dir/
-```
-
-Run the app without parameters to see other command line arguments supported.
-
-Note: make sure to run `wpsapitest` as root on Linux.
-
 ## Importing SDK
 
 Import the header file in your code:
@@ -92,6 +74,125 @@ Note: geofences can be added or removed while `WPS_periodic_location()` is runni
 ### Offline location
 
 The API supports *offline* location that allows the application to determine the location of the device even offline and outside of tile coverage by collecting a *token* that can be replayed when the device is once again online. Offline tokens are only valid for 90 days after they are generated. Attempting to redeem a token more than 90 days old will result in an error.
+
+## Reference application
+
+A reference application named `wpsapitest` is provided with the SDK package. You can run it out of the box on your system to test location determination capabilities of the SDK.
+
+Start the app without arguments to see all options that are supported.
+
+**Note:** make sure to run `wpsapitest` *as root* on Linux.
+
+### One shot call
+
+When executed with a single API key argument, the app will determine a location once:
+```sh
+./wpsapitest -k <MY_KEY>
+```
+
+Example output:
+```
+42.352017, -71.047445   +/-9m   2+0+0  62ms
+91 Farnsworth St
+Boston, MA 02210
+```
+
+### Periodic location
+
+Execute the following command to run periodic location updates with 1 second period indefinitely (`Ctrl+C` to interrupt), with tiling enabled:
+```sh
+./wpsapitest -k <MY_KEY> -p 1 -t <tile_dir>
+```
+
+Using existing tiles in *offline mode*:
+```sh
+./wpsapitest -k <MY_KEY> -p 1 -t <tile_dir> -o
+```
+
+Note that the `tile_dir` must pre-exist in the file system for tiling to work. Examples below will use `/tmp/tiles` as a directory to store tiles.
+
+Example output for the above commands:
+```
+tiling directory: /tmp/tiles
+42.352091, -71.047431   +/-122m 2+0+0  66ms
+    0.0km/h
+42.352091, -71.047431   +/-122m 2+0+0  67ms
+    0.0km/h
+42.352091, -71.047431   +/-122m 2+0+0  67ms
+    0.0km/h
+42.352091, -71.047431   +/-122m 2+0+0  67ms
+    0.0km/h
+```
+
+### CSV output format
+
+The app supports printing location data in the CSV format, which may be useful for post-processing the output (e.g. for plotting locations on a map).
+
+In order to enable the CSV-fromatted output, use the `-V` or `--output-csv` switch:
+```sh
+./wpsapitest -k <MY_KEY> -p 1 -t /tmp/tiles -V
+```
+
+Output:
+```
+tiling directory: /tmp/tiles
+1594766000,42.352091,-71.047431,122
+1594766001,42.352091,-71.047431,122
+1594766002,42.352091,-71.047431,122
+1594766003,42.352091,-71.047431,122
+1594766004,42.352091,-71.047431,122
+1594766005,42.352091,-71.047431,122
+1594766006,42.352091,-71.047431,122
+1594766007,42.352091,-71.047431,122
+```
+
+Note that unformatted status messages like `tiling directory: /tmp/tiles` are printed to `stderr`, so you can collect location-only data by redirecting `stdout` to a file:
+```sh
+./wpsapitest -k <MY_KEY> -p 1 -t /tmp/tiles -V > locations.csv
+```
+
+### Offline location
+
+Periodically generate and store tokens in offline mode, for 10 seconds:
+```sh
+./wpsapitest -k <MY_KEY> -K q1w2e3r4 -O token_dir -p 1 -i 10 -o
+```
+
+Output:
+```
+offline mode enabled
+*** failure (6)!
+saved offline token: /tmp/offline/1594750740.tok
+*** failure (6)!
+saved offline token: /tmp/offline/1594750742.tok
+*** failure (6)!
+saved offline token: /tmp/offline/1594750743.tok
+*** failure (6)!
+saved offline token: /tmp/offline/1594750745.tok
+*** failure (6)!
+saved offline token: /tmp/offline/1594750746.tok
+*** failure (6)!
+saved offline token: /tmp/offline/1594750747.tok
+*** failure (6)!
+saved offline token: /tmp/offline/1594750748.tok
+```
+
+Redeem previously stored tokens from a directory and resolve locations retroactively against the server:
+```sh
+./wpsapitest -k <MY_KEY> -K q1w2e3r4 -O token_dir
+```
+
+Output:
+```
+found 7 offline tokens in directory: /tmp/offline
+42.352017, -71.047445   +/-9m   2+0+0  37082ms
+42.352017, -71.047445   +/-9m   2+0+0  35079ms
+42.352017, -71.047445   +/-9m   2+0+0  34082ms
+42.352017, -71.047445   +/-9m   2+0+0  32081ms
+42.352017, -71.047445   +/-9m   2+0+0  32081ms
+42.352017, -71.047445   +/-9m   2+0+0  31082ms
+42.352017, -71.047445   +/-9m   2+0+0  30082ms
+```
 
 ## Logging
 
@@ -233,7 +334,13 @@ The following keys will be added in your `.entitlements` file:
 
 ## Changelog
 
-### Version 5.0.0
+### Version 5.1
+
+* Fixed issues with offline location API
+* Added support for offline location API in wpsapitest
+* Added support for offline mode in wpsapitest
+
+### Version 5.0
 
 * Added support for macOS 10.15 (Catalina)
 * Introduced `WPS_ERROR_LOCATION_NOT_PERMITTED`
