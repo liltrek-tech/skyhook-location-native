@@ -5,7 +5,7 @@
 Operating systems:
 
 * Windows XP Service Pack 2 or 3, Windows Vista, Windows 7, 8, 10
-* Mac OS X 10.6 - 10.15
+* Mac OS X 10.6 - 11.0
 * Linux 2.6+ with wireless extensions or `nl80211` and root access
 
 Hardware:
@@ -296,12 +296,12 @@ Refer to [Apple's documentation](https://developer.apple.com/documentation/corel
 
 #### Command line apps in macOS Catalina
 
-For commmand line apps in macOS Catalina extra steps are required to obtain the authorization to determine a Wi-Fi based location from WPS API:
+For commmand line apps in macOS Catalina or later, extra steps are required to obtain the authorization to determine a Wi-Fi based location from WPS API:
 
 * If the app makes any calls to `CLLocationManager`, those must be made *after* calling `WPS_load()`
 * An `Info.plist` file must be placed in the same directory where the executable is located, with the `CFBundleIdentifier` and `CFBundleExecutable` fields populated
 
-Please see the [quick start project](https://github.com/SkyhookWireless/location-quick-start-native) as an example of a command line application utilizing the SDK to determine Wi-Fi based location on macOS Catalina.
+Please see the [quick start project](https://github.com/SkyhookWireless/location-quick-start-native) as an example of a command line application utilizing the SDK to determine Wi-Fi based location on macOS 10.15+.
 
 #### Hardened Runtime
 
@@ -333,6 +333,10 @@ The following keys will be added in your `.entitlements` file:
 ```
 
 ## Changelog
+
+### Version 5.1.1
+
+* Added support for macOS 11 (Big Sur) and Apple M1
 
 ### Version 5.1
 
