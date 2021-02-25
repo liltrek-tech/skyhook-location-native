@@ -75,6 +75,10 @@ Note: geofences can be added or removed while `WPS_periodic_location()` is runni
 
 The API supports *offline* location that allows the application to determine the location of the device even offline and outside of tile coverage by collecting a *token* that can be replayed when the device is once again online. Offline tokens are only valid for 90 days after they are generated. Attempting to redeem a token more than 90 days old will result in an error.
 
+## API reference
+
+Check the [full API reference](https://skyhookwireless.github.io/skyhook-location-native/doxygen/html) for more information on APIs that are exposed by the SDK.
+
 ## Reference application
 
 A reference application named `wpsapitest` is provided with the SDK package. You can run it out of the box on your system to test location determination capabilities of the SDK.
@@ -332,24 +336,7 @@ The following keys will be added in your `.entitlements` file:
     <true/>
 ```
 
-## Changelog
-
-### Version 5.1.1
-
-* Added support for macOS 11 (Big Sur) and Apple M1
-
-### Version 5.1
-
-* Fixed issues with offline location API
-* Added support for offline location API in wpsapitest
-* Added support for offline mode in wpsapitest
-
-### Version 5.0
-
-* Added support for macOS 10.15 (Catalina)
-* Introduced `WPS_ERROR_LOCATION_NOT_PERMITTED`
-* Revamped documentation and SDK packaging
-* Improved tiling coverage over ethernet connection
+## Legacy Changelog (non-GitHub releases prior to 5.0)
 
 ### Version 4.9.9
 
@@ -536,10 +523,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ## Patents
 
 Please visit [the website](https://www.skyhook.com/patents) to see the full list of patents issued to Skyhook.
-
-## API reference
-
-Check the [full API reference](https://skyhookwireless.github.io/skyhook-location-native/doxygen/html) for more information on APIs that are exposed by the SDK.
 
 ## Troubleshooting
 
