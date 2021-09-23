@@ -43,6 +43,8 @@ var wpsapi_8h =
       [ "WPS_ERROR_NOT_SIGNED", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a69ea5a02f1fccb74236585efc9b6a459", null ],
       [ "WPS_ERROR_LOCATION_SETTING_DISABLED", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302aadd677d1342d592c4ad5ce6891f385ff", null ],
       [ "WPS_ERROR_LOCATION_NOT_PERMITTED", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a60940d4b1177d9663025de4912667349", null ],
+      [ "WPS_NOT_SUPPORTED", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a285d23350ae637ad21759c4569cba248", null ],
+      [ "WPS_ERROR_SERVICE_EXPIRED", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302ac3be501beaa68632018930f8d4364356", null ],
       [ "WPS_NOMEM", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a610174fc071e16c8a659c3be100d1845", null ],
       [ "WPS_ERROR", "wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a693e0624b2058be167a46b4eed835a05", null ]
     ] ],
@@ -65,6 +67,7 @@ var wpsapi_8h =
     [ "WPS_offline_token", "wpsapi_8h.html#af851e5b3775bebb0deb01f22b626314a", null ],
     [ "WPS_periodic_location", "wpsapi_8h.html#a6d7bbe508f828fe5ce856fe8f4751d18", null ],
     [ "WPS_register_user", "wpsapi_8h.html#a29115f068a3bd22006979c9111d5dab5", null ],
+    [ "WPS_set_auth", "wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a", null ],
     [ "WPS_set_auth_token", "wpsapi_8h.html#aebc6095c4d403b7ff53600048cdc974f", null ],
     [ "WPS_set_key", "wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689", null ],
     [ "WPS_set_local_files_path", "wpsapi_8h.html#a7c0bfc67b74645e74fbdad1f6012b954", null ],

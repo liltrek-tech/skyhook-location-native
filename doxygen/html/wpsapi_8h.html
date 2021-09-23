@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PL SDK - Software Development Kit
-   &#160;<span id="projectnumber">5.3.0</span>
+   &#160;<span id="projectnumber">5.4.0</span>
    </div>
    <div id="projectbrief">API Reference</div>
   </td>
@@ -147,8 +147,11 @@ Enumerations</h2></td></tr>
 <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302aadd677d1342d592c4ad5ce6891f385ff">WPS_ERROR_LOCATION_SETTING_DISABLED</a> = 15, 
 <br />
 &#160;&#160;<a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a60940d4b1177d9663025de4912667349">WPS_ERROR_LOCATION_NOT_PERMITTED</a> = 16, 
+<a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a285d23350ae637ad21759c4569cba248">WPS_NOT_SUPPORTED</a> = 17, 
+<a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302ac3be501beaa68632018930f8d4364356">WPS_ERROR_SERVICE_EXPIRED</a> = 18, 
 <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a610174fc071e16c8a659c3be100d1845">WPS_NOMEM</a> = 98, 
-<a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a693e0624b2058be167a46b4eed835a05">WPS_ERROR</a> = 99
+<br />
+&#160;&#160;<a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a693e0624b2058be167a46b4eed835a05">WPS_ERROR</a> = 99
 <br />
  }</td></tr>
 <tr class="separator:a58fefac6c3603b454c51251e6eab7302"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,6 +219,8 @@ Functions</h2></td></tr>
 <tr class="separator:aed3a9e1faedcc6b0d315947a8d335ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a617119d08b299f5041a3afe11e0b5689"><td class="memItemLeft" align="right" valign="top">WPSAPI_EXPORT <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a> WPSAPI_CALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key</a> (const char *key)</td></tr>
 <tr class="separator:a617119d08b299f5041a3afe11e0b5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c678977b15d8e74054e920c1cb93e8a"><td class="memItemLeft" align="right" valign="top">WPSAPI_EXPORT <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a> WPSAPI_CALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth</a> (const char *key, const char *sku)</td></tr>
+<tr class="separator:a8c678977b15d8e74054e920c1cb93e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebc6095c4d403b7ff53600048cdc974f"><td class="memItemLeft" align="right" valign="top">WPSAPI_EXPORT <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a> WPSAPI_CALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wpsapi_8h.html#aebc6095c4d403b7ff53600048cdc974f">WPS_set_auth_token</a> (const char *token)</td></tr>
 <tr class="separator:aebc6095c4d403b7ff53600048cdc974f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af73bb9017cbd004abeca9687573397a8"><td class="memItemLeft" align="right" valign="top">WPSAPI_EXPORT <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a> WPSAPI_CALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user</a> (const <a class="el" href="struct_w_p_s___simple_authentication.html">WPS_SimpleAuthentication</a> *authentication)</td></tr>
@@ -539,6 +544,12 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a58fefac6c3603b454c51251e6eab7302a60940d4b1177d9663025de4912667349"></a>WPS_ERROR_LOCATION_NOT_PERMITTED&#160;</td><td class="fielddoc"><p>The application is not permitted to determine location.</p>
 <dl class="section since"><dt>Since</dt><dd>5.0 </dd></dl>
 </td></tr>
+<tr><td class="fieldname"><a id="a58fefac6c3603b454c51251e6eab7302a285d23350ae637ad21759c4569cba248"></a>WPS_NOT_SUPPORTED&#160;</td><td class="fielddoc"><p>Functionality is not supported.</p>
+<dl class="section since"><dt>Since</dt><dd>5.4 </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="a58fefac6c3603b454c51251e6eab7302ac3be501beaa68632018930f8d4364356"></a>WPS_ERROR_SERVICE_EXPIRED&#160;</td><td class="fielddoc"><p>Service has expired.</p>
+<dl class="section since"><dt>Since</dt><dd>5.4 </dd></dl>
+</td></tr>
 <tr><td class="fieldname"><a id="a58fefac6c3603b454c51251e6eab7302a610174fc071e16c8a659c3be100d1845"></a>WPS_NOMEM&#160;</td><td class="fielddoc"><p>Cannot allocate memory.</p>
 <dl class="section since"><dt>Since</dt><dd>2.6.1 </dd></dl>
 </td></tr>
@@ -614,7 +625,7 @@ Functions</h2></td></tr>
 <p>Requests certified periodic geographic location based on observed Wi-Fi access points, cell towers, and GPS signals.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">street_address_lookup</td><td>request street address lookup in addition to latitude/longitude lookup <br  />
  Note that street address lookup is only performed when the location is determined by the remote server (network-centric model), not when the location is determined locally. </td></tr>
     <tr><td class="paramname">callback</td><td>the callback routine to report locations to. </td></tr>
@@ -867,7 +878,7 @@ Functions</h2></td></tr>
 <dl class="section user"><dt></dt><dd><code><a class="el" href="wpsapi_8h.html#a9bfa3a58cfaf24e9a1a1ab9d367a8a63">WPS_ip_location()</a></code> requires network connectivity.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">street_address_lookup</td><td>request street address lookup in addition to lat/long lookup. </td></tr>
     <tr><td class="paramname">location</td><td>pointer to return a <code><a class="el" href="struct_w_p_s___i_p_location.html">WPS_IPLocation</a></code> struct. <br  />
  This pointer must be freed by calling <code><a class="el" href="wpsapi_8h.html#ae72dca57c8f91a2caeffb40e09718c47">WPS_free_ip_location()</a></code> </td></tr>
@@ -948,7 +959,7 @@ Functions</h2></td></tr>
 <p>Requests geographic location based on observed Wi-Fi access points, cell towers, and GPS signals.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">street_address_lookup</td><td>request street address lookup in addition to latitude/longitude lookup. </td></tr>
     <tr><td class="paramname">location</td><td>pointer to return a <code><a class="el" href="struct_w_p_s___location.html">WPS_Location</a></code> struct. <br  />
  This pointer must be freed by calling <code><a class="el" href="wpsapi_8h.html#a521d1023d4ca3102b6b5ccb58e35384f">WPS_free_location()</a></code>.</td></tr>
@@ -1027,7 +1038,7 @@ Functions</h2></td></tr>
 <p>Request a geographic location from a token collected at a different time.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">key</td><td>a key used to encrypt the <code>token</code>. </td></tr>
     <tr><td class="paramname">key_length</td><td>the length of the key used to encrypt the <code>token</code> </td></tr>
     <tr><td class="paramname">token</td><td>the token to be converted to a location </td></tr>
@@ -1118,7 +1129,7 @@ Functions</h2></td></tr>
 <p>Retrieve a secure offline token based on the latest observed Wi-Fi access points and cell towers. This token can be saved and converted to a location later by calling <code><a class="el" href="wpsapi_8h.html#afbaf4a769b46b126abe42bb5f4188d78">WPS_offline_location()</a></code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">key</td><td>a key used to encrypt the token. <br  />
  The longer the key the more effective the encryption. It is recommended to have a key of at least 16 bytes. </td></tr>
     <tr><td class="paramname">key_length</td><td>the length of the key. </td></tr>
@@ -1215,7 +1226,7 @@ Functions</h2></td></tr>
 <p>Requests periodic geographic location based on observed Wi-Fi access points, cell towers, and GPS signals.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">street_address_lookup</td><td>request street address lookup in addition to latitude/longitude lookup <br  />
  Note that street address lookup is only performed when the location is determined by the remote server (network-centric model), not when the location is determined locally. </td></tr>
     <tr><td class="paramname">period</td><td>maximum time in milliseconds between location reports. <br  />
@@ -1274,7 +1285,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Register a new user.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Replaced by <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Replaced by <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> and <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">authentication</td><td>an existing user's authentication information. </td></tr>
@@ -1342,12 +1353,52 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    saveUsername(generatedusername); <span class="comment">// save registered username</span></div>
 <div class="line">}</div>
-</div><!-- fragment --> Note that the generated username should be stable &ndash; ie. remain constant over time, every time it is generated &ndash; to avoid unneccesary re-registrations. Care should be taken when generating a username to protect the privacy of the user, and should not contain any personally identifiable information. This can be achieved, for example, by hashing a unique identifier of the device, like the IMEI, or the MAC, or some other hardware ID. </dd></dl>
+</div><!-- fragment --> Note that the generated username should be stable &ndash; ie. remain constant over time, every time it is generated &ndash; to avoid unnecessary re-registrations. Care should be taken when generating a username to protect the privacy of the user, and should not contain any personally identifiable information. This can be achieved, for example, by hashing a unique identifier of the device, like the IMEI, or the MAC, or some other hardware ID. </dd></dl>
 <dl class="section user"><dt></dt><dd>Once registration is complete <code>wpsUser</code> can be used in any <code>WPS_*</code> calls. For example: <div class="fragment"><div class="line"><a class="code" href="struct_w_p_s___location.html">WPS_Location</a>* location;</div>
 <div class="line"><a class="code" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a> rc = <a class="code" href="wpsapi_8h.html#a5751bf1d4fbcd647816db382b40f5635">WPS_location</a>(&amp;wpsUser,</div>
 <div class="line">                                 <a class="code" href="wpsapi_8h.html#a904d2fff33100fb8f9028689730f3382aa91de43d8473f2dba9655af9bc42ce43">WPS_NO_STREET_ADDRESS_LOOKUP</a>,</div>
 <div class="line">                                 &amp;location);</div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a8c678977b15d8e74054e920c1cb93e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c678977b15d8e74054e920c1cb93e8a">&#9670;&nbsp;</a></span>WPS_set_auth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WPSAPI_EXPORT <a class="el" href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a> WPSAPI_CALL WPS_set_auth </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>sku</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the user's authentication information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>an existing user's API key. </td></tr>
+    <tr><td class="paramname">sku</td><td>product's SKU.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Make sure to call this method before making any other calls, such as during initialization of the application. <br  />
+After this call you should pass <code>NULL</code> as <code>authentication</code> to other calls like <code>WPS_location</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>Must not be used in conjunction with <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code> </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>4.9 </dd></dl>
 
 </div>
 </div>
@@ -1373,10 +1424,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This is an authentication method alternative to the API key based authentication. <br  />
+<p>This authentication method is only supported in custom API server environments. <br  />
 Make sure to call this method before making any other calls, such as during initialization of the application. <br  />
 After this call you should pass <code>NULL</code> as <code>authentication</code> to other calls like <code>WPS_location</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>Must not be used in conjunction with <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must not be used in conjunction with <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> and <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code> </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>4.9.8 </dd></dl>
 
 </div>
@@ -1403,10 +1454,9 @@ After this call you should pass <code>NULL</code> as <code>authentication</code>
   </table>
   </dd>
 </dl>
-<p>This is the preferred method to authenticate for new applications. <br  />
-Make sure to call this method before making any other calls, such as during initialization of the application. <br  />
+<p>Make sure to call this method before making any other calls, such as during initialization of the application. <br  />
 After this call you should pass <code>NULL</code> as <code>authentication</code> to other calls like <code>WPS_location</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>Must not be used in conjunction with <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Must not be used in conjunction with <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code> </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>4.9 </dd></dl>
 
 </div>
@@ -1516,7 +1566,7 @@ After this call you should pass <code>NULL</code> as <code>authentication</code>
       </table>
 </div><div class="memdoc">
 <p>Set the user's authentication information.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>Replaced by <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>Replaced by <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> and <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">authentication</td><td>an existing user's authentication information.</td></tr>
@@ -1648,7 +1698,7 @@ After this call you should pass <code>NULL</code> as <code>authentication</code>
  Tiles are managed automatically (download of new tiles when required and remove of old tiles) by <code>WPS_location</code> and <code>WPS_periodic_location</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">dirpath</td><td>the path to a directory to store tiles. <br  />
  <code>dirpath</code> must end with a directory separator character. (i.e. '\' on Windows platforms and '/' on Unix platforms) </td></tr>
     <tr><td class="paramname">maxDataSizePerSession</td><td>the maximum size of data downloaded per session, in bytes. <br  />
@@ -1793,7 +1843,7 @@ After this call you should pass <code>NULL</code> as <code>authentication</code>
 sample code for verifying the signature in the <code>example/CertifiedSignatureTestJava</code> and <code>example/CertifiedSignatureTestPhp</code> directories</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#af73bb9017cbd004abeca9687573397a8">WPS_set_registration_user()</a></code>, otherwise set to the user's authentication information. </td></tr>
+    <tr><td class="paramname">authentication</td><td>must be <code>NULL</code> for new applications that use <code><a class="el" href="wpsapi_8h.html#a617119d08b299f5041a3afe11e0b5689">WPS_set_key()</a></code> or <code><a class="el" href="wpsapi_8h.html#a8c678977b15d8e74054e920c1cb93e8a">WPS_set_auth()</a></code>, otherwise set to the user's authentication information. </td></tr>
     <tr><td class="paramname">street_address_lookup</td><td>request street address lookup in addition to latitude/longitude lookup <br  />
  Note that street address lookup is only performed when the location is determined by the remote server (network-centric model), not when the location is determined locally. </td></tr>
     <tr><td class="paramname">salt</td><td>random data that is used as an additional input to the hash of the returned location. </td></tr>
@@ -1942,42 +1992,42 @@ This call requires the device's local time to be correct. <code>WPS_ERROR_NOT_SI
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astruct_w_p_s___simple_authentication_html_a260a496c13ebb0762edad158fbd2af49"><div class="ttname"><a href="struct_w_p_s___simple_authentication.html#a260a496c13ebb0762edad158fbd2af49">WPS_SimpleAuthentication::realm</a></div><div class="ttdeci">const char * realm</div><div class="ttdef"><b>Definition:</b> wpsapi.h:254</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html"><div class="ttname"><a href="struct_w_p_s___geo_fence.html">WPS_GeoFence</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:1599</div></div>
-<div class="ttc" id="awpsapi_8h_html_a04923e6628d2ba181e4710a35533ac25"><div class="ttname"><a href="wpsapi_8h.html#a04923e6628d2ba181e4710a35533ac25">WPS_Continuation</a></div><div class="ttdeci">WPS_Continuation</div><div class="ttdef"><b>Definition:</b> wpsapi.h:235</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html_a2ebb94c8bf077230d81ed27c2cbc18b8"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a2ebb94c8bf077230d81ed27c2cbc18b8">WPS_GeoFence::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1619</div></div>
-<div class="ttc" id="astruct_w_p_s___location_html_a779d4460439f778ef2b5b7d65e24ad95"><div class="ttname"><a href="struct_w_p_s___location.html#a779d4460439f778ef2b5b7d65e24ad95">WPS_Location::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:400</div></div>
-<div class="ttc" id="astruct_w_p_s___i_p_location_html"><div class="ttname"><a href="struct_w_p_s___i_p_location.html">WPS_IPLocation</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:666</div></div>
+<div class="ttc" id="astruct_w_p_s___simple_authentication_html_a260a496c13ebb0762edad158fbd2af49"><div class="ttname"><a href="struct_w_p_s___simple_authentication.html#a260a496c13ebb0762edad158fbd2af49">WPS_SimpleAuthentication::realm</a></div><div class="ttdeci">const char * realm</div><div class="ttdef"><b>Definition:</b> wpsapi.h:268</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html"><div class="ttname"><a href="struct_w_p_s___geo_fence.html">WPS_GeoFence</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:1630</div></div>
+<div class="ttc" id="awpsapi_8h_html_a04923e6628d2ba181e4710a35533ac25"><div class="ttname"><a href="wpsapi_8h.html#a04923e6628d2ba181e4710a35533ac25">WPS_Continuation</a></div><div class="ttdeci">WPS_Continuation</div><div class="ttdef"><b>Definition:</b> wpsapi.h:249</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html_a2ebb94c8bf077230d81ed27c2cbc18b8"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a2ebb94c8bf077230d81ed27c2cbc18b8">WPS_GeoFence::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1650</div></div>
+<div class="ttc" id="astruct_w_p_s___location_html_a779d4460439f778ef2b5b7d65e24ad95"><div class="ttname"><a href="struct_w_p_s___location.html#a779d4460439f778ef2b5b7d65e24ad95">WPS_Location::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:414</div></div>
+<div class="ttc" id="astruct_w_p_s___i_p_location_html"><div class="ttname"><a href="struct_w_p_s___i_p_location.html">WPS_IPLocation</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:680</div></div>
 <div class="ttc" id="awpsapi_8h_html_a58fefac6c3603b454c51251e6eab7302"><div class="ttname"><a href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302">WPS_ReturnCode</a></div><div class="ttdeci">WPS_ReturnCode</div><div class="ttdef"><b>Definition:</b> wpsapi.h:108</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html_a2fd8982ed5cc8e2d6eb0696c94890c5a"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a2fd8982ed5cc8e2d6eb0696c94890c5a">WPS_GeoFence::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1618</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html_a2fd8982ed5cc8e2d6eb0696c94890c5a"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a2fd8982ed5cc8e2d6eb0696c94890c5a">WPS_GeoFence::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1649</div></div>
 <div class="ttc" id="awpsapi_8h_html_a3aefa97d8e322e35e92b67326d620e23"><div class="ttname"><a href="wpsapi_8h.html#a3aefa97d8e322e35e92b67326d620e23">WPS_geofence_cancel</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_geofence_cancel(WPS_GeoFenceHandle handle)</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html_a04b9b4900c35f71f1812ad444990919e"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a04b9b4900c35f71f1812ad444990919e">WPS_GeoFence::radius</a></div><div class="ttdeci">unsigned radius</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1625</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html_a04b9b4900c35f71f1812ad444990919e"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a04b9b4900c35f71f1812ad444990919e">WPS_GeoFence::radius</a></div><div class="ttdeci">unsigned radius</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1656</div></div>
 <div class="ttc" id="awpsapi_8h_html_aa961c6a4fe3d6b61b69ddb5e4925c794"><div class="ttname"><a href="wpsapi_8h.html#aa961c6a4fe3d6b61b69ddb5e4925c794">WPS_set_tiling</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_set_tiling(const WPS_SimpleAuthentication *authentication, const char *dirpath, unsigned maxDataSizePerSession, unsigned maxDataSizeTotal, WPS_TilingCallback callback, void *arg)</div></div>
-<div class="ttc" id="awpsapi_8h_html_a92be407ff672f4585de45cdef87eed5ca3c5ada8d532fc0b479affca1fa4e4ccd"><div class="ttname"><a href="wpsapi_8h.html#a92be407ff672f4585de45cdef87eed5ca3c5ada8d532fc0b479affca1fa4e4ccd">WPS_GEOFENCE_ENTER</a></div><div class="ttdeci">@ WPS_GEOFENCE_ENTER</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1569</div></div>
-<div class="ttc" id="awpsapi_8h_html_a2085327f242826da327c6d140c1112ee"><div class="ttname"><a href="wpsapi_8h.html#a2085327f242826da327c6d140c1112ee">WPS_GeoFenceHandle</a></div><div class="ttdeci">void * WPS_GeoFenceHandle</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1648</div></div>
+<div class="ttc" id="awpsapi_8h_html_a92be407ff672f4585de45cdef87eed5ca3c5ada8d532fc0b479affca1fa4e4ccd"><div class="ttname"><a href="wpsapi_8h.html#a92be407ff672f4585de45cdef87eed5ca3c5ada8d532fc0b479affca1fa4e4ccd">WPS_GEOFENCE_ENTER</a></div><div class="ttdeci">@ WPS_GEOFENCE_ENTER</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1600</div></div>
+<div class="ttc" id="awpsapi_8h_html_a2085327f242826da327c6d140c1112ee"><div class="ttname"><a href="wpsapi_8h.html#a2085327f242826da327c6d140c1112ee">WPS_GeoFenceHandle</a></div><div class="ttdeci">void * WPS_GeoFenceHandle</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1679</div></div>
 <div class="ttc" id="awpsapi_8h_html_a521d1023d4ca3102b6b5ccb58e35384f"><div class="ttname"><a href="wpsapi_8h.html#a521d1023d4ca3102b6b5ccb58e35384f">WPS_free_location</a></div><div class="ttdeci">WPSAPI_EXPORT void WPSAPI_CALL WPS_free_location(WPS_Location *)</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html_ae3530223f00a11d0bc344e39823d2b58"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#ae3530223f00a11d0bc344e39823d2b58">WPS_GeoFence::size</a></div><div class="ttdeci">unsigned size</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1612</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html_ae3530223f00a11d0bc344e39823d2b58"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#ae3530223f00a11d0bc344e39823d2b58">WPS_GeoFence::size</a></div><div class="ttdeci">unsigned size</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1643</div></div>
 <div class="ttc" id="awpsapi_8h_html_afbaf4a769b46b126abe42bb5f4188d78"><div class="ttname"><a href="wpsapi_8h.html#afbaf4a769b46b126abe42bb5f4188d78">WPS_offline_location</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_offline_location(const WPS_SimpleAuthentication *authentication, const unsigned char *key, unsigned key_length, const unsigned char *token, unsigned token_size, WPS_Location **location)</div></div>
 <div class="ttc" id="awpsapi_8h_html_a29115f068a3bd22006979c9111d5dab5"><div class="ttname"><a href="wpsapi_8h.html#a29115f068a3bd22006979c9111d5dab5">WPS_register_user</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_register_user(const WPS_SimpleAuthentication *authentication, const WPS_SimpleAuthentication *new_authentication)</div></div>
 <div class="ttc" id="awpsapi_8h_html_a9bfa3a58cfaf24e9a1a1ab9d367a8a63"><div class="ttname"><a href="wpsapi_8h.html#a9bfa3a58cfaf24e9a1a1ab9d367a8a63">WPS_ip_location</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_ip_location(const WPS_SimpleAuthentication *authentication, WPS_StreetAddressLookup street_address_lookup, WPS_IPLocation **location)</div></div>
 <div class="ttc" id="awpsapi_8h_html_a58fefac6c3603b454c51251e6eab7302a46b785be55147ba5d6bf3112f8638065"><div class="ttname"><a href="wpsapi_8h.html#a58fefac6c3603b454c51251e6eab7302a46b785be55147ba5d6bf3112f8638065">WPS_OK</a></div><div class="ttdeci">@ WPS_OK</div><div class="ttdef"><b>Definition:</b> wpsapi.h:112</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html_acd61ba5a4ed25b8cad617b8c260a920c"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#acd61ba5a4ed25b8cad617b8c260a920c">WPS_GeoFence::type</a></div><div class="ttdeci">WPS_GeoFenceType type</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1630</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html_acd61ba5a4ed25b8cad617b8c260a920c"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#acd61ba5a4ed25b8cad617b8c260a920c">WPS_GeoFence::type</a></div><div class="ttdeci">WPS_GeoFenceType type</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1661</div></div>
 <div class="ttc" id="awpsapi_8h_html_a5751bf1d4fbcd647816db382b40f5635"><div class="ttname"><a href="wpsapi_8h.html#a5751bf1d4fbcd647816db382b40f5635">WPS_location</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_location(const WPS_SimpleAuthentication *authentication, WPS_StreetAddressLookup street_address_lookup, WPS_Location **location)</div></div>
 <div class="ttc" id="awpsapi_8h_html_af851e5b3775bebb0deb01f22b626314a"><div class="ttname"><a href="wpsapi_8h.html#af851e5b3775bebb0deb01f22b626314a">WPS_offline_token</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_offline_token(const WPS_SimpleAuthentication *authentication, const unsigned char *key, unsigned key_length, unsigned char **token, unsigned *token_size)</div></div>
-<div class="ttc" id="astruct_w_p_s___location_html_a244bc6fb322dcd13ec046dab5426e2e1"><div class="ttname"><a href="struct_w_p_s___location.html#a244bc6fb322dcd13ec046dab5426e2e1">WPS_Location::hpe</a></div><div class="ttdeci">double hpe</div><div class="ttdef"><b>Definition:</b> wpsapi.h:408</div></div>
-<div class="ttc" id="astruct_w_p_s___simple_authentication_html_a56bb818aef2c8ddd3f326b2f1b19bca7"><div class="ttname"><a href="struct_w_p_s___simple_authentication.html#a56bb818aef2c8ddd3f326b2f1b19bca7">WPS_SimpleAuthentication::username</a></div><div class="ttdeci">const char * username</div><div class="ttdef"><b>Definition:</b> wpsapi.h:249</div></div>
+<div class="ttc" id="astruct_w_p_s___location_html_a244bc6fb322dcd13ec046dab5426e2e1"><div class="ttname"><a href="struct_w_p_s___location.html#a244bc6fb322dcd13ec046dab5426e2e1">WPS_Location::hpe</a></div><div class="ttdeci">double hpe</div><div class="ttdef"><b>Definition:</b> wpsapi.h:422</div></div>
+<div class="ttc" id="astruct_w_p_s___simple_authentication_html_a56bb818aef2c8ddd3f326b2f1b19bca7"><div class="ttname"><a href="struct_w_p_s___simple_authentication.html#a56bb818aef2c8ddd3f326b2f1b19bca7">WPS_SimpleAuthentication::username</a></div><div class="ttdeci">const char * username</div><div class="ttdef"><b>Definition:</b> wpsapi.h:263</div></div>
 <div class="ttc" id="awpsapi_8h_html_a6d7bbe508f828fe5ce856fe8f4751d18"><div class="ttname"><a href="wpsapi_8h.html#a6d7bbe508f828fe5ce856fe8f4751d18">WPS_periodic_location</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_periodic_location(const WPS_SimpleAuthentication *authentication, WPS_StreetAddressLookup street_address_lookup, unsigned long period, unsigned iterations, WPS_LocationCallback callback, void *arg)</div></div>
 <div class="ttc" id="awpsapi_8h_html_a425145f6e6a510479a8879998be6601d"><div class="ttname"><a href="wpsapi_8h.html#a425145f6e6a510479a8879998be6601d">WPS_free_offline_token</a></div><div class="ttdeci">WPSAPI_EXPORT void WPSAPI_CALL WPS_free_offline_token(unsigned char *token)</div></div>
-<div class="ttc" id="astruct_w_p_s___geo_fence_html_a595c42aa09761b47e84806c34912ca59"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a595c42aa09761b47e84806c34912ca59">WPS_GeoFence::period</a></div><div class="ttdeci">unsigned long period</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1640</div></div>
-<div class="ttc" id="astruct_w_p_s___location_html"><div class="ttname"><a href="struct_w_p_s___location.html">WPS_Location</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:395</div></div>
-<div class="ttc" id="astruct_w_p_s___simple_authentication_html"><div class="ttname"><a href="struct_w_p_s___simple_authentication.html">WPS_SimpleAuthentication</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:245</div></div>
+<div class="ttc" id="astruct_w_p_s___geo_fence_html_a595c42aa09761b47e84806c34912ca59"><div class="ttname"><a href="struct_w_p_s___geo_fence.html#a595c42aa09761b47e84806c34912ca59">WPS_GeoFence::period</a></div><div class="ttdeci">unsigned long period</div><div class="ttdef"><b>Definition:</b> wpsapi.h:1671</div></div>
+<div class="ttc" id="astruct_w_p_s___location_html"><div class="ttname"><a href="struct_w_p_s___location.html">WPS_Location</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:409</div></div>
+<div class="ttc" id="astruct_w_p_s___simple_authentication_html"><div class="ttname"><a href="struct_w_p_s___simple_authentication.html">WPS_SimpleAuthentication</a></div><div class="ttdef"><b>Definition:</b> wpsapi.h:259</div></div>
 <div class="ttc" id="awpsapi_8h_html_a339d878e7a699eab249f6e6ee5852818"><div class="ttname"><a href="wpsapi_8h.html#a339d878e7a699eab249f6e6ee5852818">WPS_geofence_set</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_geofence_set(const WPS_GeoFence *geofence, WPS_GeoFenceCallback callback, void *arg, WPS_GeoFenceHandle *handle)</div></div>
 <div class="ttc" id="awpsapi_8h_html_a0ef7e6dd29e3ee67d2907ba2b1227bba"><div class="ttname"><a href="wpsapi_8h.html#a0ef7e6dd29e3ee67d2907ba2b1227bba">WPS_geofence_cancel_all</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_geofence_cancel_all()</div></div>
 <div class="ttc" id="awpsapi_8h_html_ae72dca57c8f91a2caeffb40e09718c47"><div class="ttname"><a href="wpsapi_8h.html#ae72dca57c8f91a2caeffb40e09718c47">WPS_free_ip_location</a></div><div class="ttdeci">WPSAPI_EXPORT void WPSAPI_CALL WPS_free_ip_location(WPS_IPLocation *)</div></div>
-<div class="ttc" id="awpsapi_8h_html_a04923e6628d2ba181e4710a35533ac25a90f9afe559e9d82942fbc5b0b0b36331"><div class="ttname"><a href="wpsapi_8h.html#a04923e6628d2ba181e4710a35533ac25a90f9afe559e9d82942fbc5b0b0b36331">WPS_CONTINUE</a></div><div class="ttdeci">@ WPS_CONTINUE</div><div class="ttdef"><b>Definition:</b> wpsapi.h:237</div></div>
+<div class="ttc" id="awpsapi_8h_html_a04923e6628d2ba181e4710a35533ac25a90f9afe559e9d82942fbc5b0b0b36331"><div class="ttname"><a href="wpsapi_8h.html#a04923e6628d2ba181e4710a35533ac25a90f9afe559e9d82942fbc5b0b0b36331">WPS_CONTINUE</a></div><div class="ttdeci">@ WPS_CONTINUE</div><div class="ttdef"><b>Definition:</b> wpsapi.h:251</div></div>
 <div class="ttc" id="awpsapi_8h_html_a7c0bfc67b74645e74fbdad1f6012b954"><div class="ttname"><a href="wpsapi_8h.html#a7c0bfc67b74645e74fbdad1f6012b954">WPS_set_local_files_path</a></div><div class="ttdeci">WPSAPI_EXPORT WPS_ReturnCode WPSAPI_CALL WPS_set_local_files_path(const char **paths)</div></div>
-<div class="ttc" id="astruct_w_p_s___location_html_a740c7a283ded7f45cc02c35265d6f6ce"><div class="ttname"><a href="struct_w_p_s___location.html#a740c7a283ded7f45cc02c35265d6f6ce">WPS_Location::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:401</div></div>
-<div class="ttc" id="awpsapi_8h_html_a904d2fff33100fb8f9028689730f3382aa91de43d8473f2dba9655af9bc42ce43"><div class="ttname"><a href="wpsapi_8h.html#a904d2fff33100fb8f9028689730f3382aa91de43d8473f2dba9655af9bc42ce43">WPS_NO_STREET_ADDRESS_LOOKUP</a></div><div class="ttdeci">@ WPS_NO_STREET_ADDRESS_LOOKUP</div><div class="ttdef"><b>Definition:</b> wpsapi.h:270</div></div>
+<div class="ttc" id="astruct_w_p_s___location_html_a740c7a283ded7f45cc02c35265d6f6ce"><div class="ttname"><a href="struct_w_p_s___location.html#a740c7a283ded7f45cc02c35265d6f6ce">WPS_Location::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdef"><b>Definition:</b> wpsapi.h:415</div></div>
+<div class="ttc" id="awpsapi_8h_html_a904d2fff33100fb8f9028689730f3382aa91de43d8473f2dba9655af9bc42ce43"><div class="ttname"><a href="wpsapi_8h.html#a904d2fff33100fb8f9028689730f3382aa91de43d8473f2dba9655af9bc42ce43">WPS_NO_STREET_ADDRESS_LOOKUP</a></div><div class="ttdeci">@ WPS_NO_STREET_ADDRESS_LOOKUP</div><div class="ttdef"><b>Definition:</b> wpsapi.h:284</div></div>
 <!-- HTML footer for doxygen 1.8.10-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

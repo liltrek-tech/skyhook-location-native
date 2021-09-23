@@ -4,8 +4,8 @@
 
 Operating systems:
 
-* Windows XP Service Pack 2 or 3, Windows Vista, Windows 7, 8, 10
-* Mac OS X 10.6 - 11.0
+* Windows XP Service Pack 2 or 3, Windows Vista, Windows 7, 8, 10, 11
+* Mac OS X 10.7 - 12
 * Linux 2.6+ with wireless extensions or `nl80211` and root access
 
 Hardware:
@@ -31,7 +31,7 @@ Link your executable against the `wpsapi` library:
 The WPS API can be summarized to the following calls:
 
 * `WPS_load()`
-* `WPS_set_key()`
+* `WPS_set_key()` or `WPS_set_auth()`
 * `WPS_location()` or `WPS_periodic_location()`
 * `WPS_unload()`
 
@@ -43,7 +43,7 @@ When WPS API is no longer needed, or the application is terminating, call `WPS_u
 
 ### Registration
 
-Prior to using any location API calls the application should set the API key. This is accomplished by calling `WPS_set_key()`.
+Prior to using any location API calls the application should set the authentication credentials. This is accomplished by calling `WPS_set_key()` or `WPS_set_auth()`.
 
 ### API modes
 
@@ -81,11 +81,13 @@ Check the [full API reference](https://skyhookwireless.github.io/skyhook-locatio
 
 ## Reference application
 
-A reference application named `wpsapitest` is provided with the SDK package. You can run it out of the box on your system to test location determination capabilities of the SDK.
+A reference test application named `wpsapitest` is provided with the SDK package on **Windows** and **Linux** platforms. You can run it out of the box on your system to test location determination capabilities of the SDK.
 
 Start the app without arguments to see all options that are supported.
 
-**Note:** make sure to run `wpsapitest` *as root* on Linux.
+**Note:** make sure to run `wpsapitest` *as root* on **Linux**.
+
+**Note:** the command line version of `wpsapitest` is not supported on **macOS** due to [limitations](#command-line-apps-in-macos-catalina) introduced in macOS Catalina (10.15). A simplified UI version of the app is provided for macOS users in a separate disk image file: `wpsapitest-5.x.x-darwin-universal.dmg`.
 
 ### One shot call
 
@@ -224,7 +226,7 @@ The logging level can be one of the following:
 
 ## Location settings
 
-Starting from version 4.9.2 WPS API will respect the system-wide location permission setting (applies only to Windows 8+ and OS X 10.7 or later). If location services are disabled, WPS API will return `WPS_ERROR_LOCATION_SETTING_DISABLED` in `WPS_location`, `WPS_periodic_location`, `WPS_certified_location` and `WPS_tune_location` calls.
+Starting from version 4.9.2 WPS API will respect the system-wide location permission setting (applies only to Windows 8+ and macOS 10.7 or later). If location services are disabled, WPS API will return `WPS_ERROR_LOCATION_SETTING_DISABLED` in `WPS_location`, `WPS_periodic_location`, `WPS_certified_location` and `WPS_tune_location` calls.
 
 In addition, starting from version 5.0.0 WPS API may return `WPS_ERROR_LOCATION_NOT_PERMITTED` if the particular application is not permitted to determine Wi-Fi based location.
 
@@ -253,13 +255,13 @@ You can check [here](http://msdn.microsoft.com/en-us/library/windows/desktop/cc1
 
 Note: Windows 8 or higher may show a prompt to enable location services the very first time when location is requested via Location API (check the Dialogues for enabling location section here). WPS API will never cause the system to show any kind of prompts.
 
-### Mac OS X
+### macOS
 
-OS X stores location settings under *System Preferences - Security & Privacy - Privacy - Location Services*. In addition to the global setting (*Enable Location Services*) it also lists applications permitted to determine location.
+macOS stores location settings under *System Preferences - Security & Privacy - Privacy - Location Services*. In addition to the global setting (*Enable Location Services*) it also lists applications permitted to determine location.
 
-On OS X versions prior to 10.15 (Catalina) WPS API will not require the application to be listed and will grant permission whenever just the global setting is enabled.
+On macOS versions prior to 10.15 (Catalina) WPS API will not require the application to be listed and will grant permission whenever just the global setting is enabled.
 
-For information on the latest OS X version, see the [Catalina section](#location-authorization-in-macos-catalina) below.
+For information on the latest macOS version, see the [Catalina section](#location-authorization-in-macos-catalina) below.
 
 If you receive `WPS_ERROR_LOCATION_SETTING_DISABLED` from WPS API, that means that the global setting is disabled by the user. You might want to handle this by notifying the user that the location services are currently disabled in the system and hence the application will not be able to determine location. You can also navigate the user to the location settings page directly so the user may re-enable the location services back.
 
@@ -300,10 +302,11 @@ Refer to [Apple's documentation](https://developer.apple.com/documentation/corel
 
 #### Command line apps in macOS Catalina
 
-For commmand line apps in macOS Catalina or later, extra steps are required to obtain the authorization to determine a Wi-Fi based location from WPS API:
+For commmand line apps in macOS Catalina or later extra steps are required to obtain the authorization to determine a Wi-Fi based location from WPS API:
 
 * If the app makes any calls to `CLLocationManager`, those must be made *after* calling `WPS_load()`
-* An `Info.plist` file must be placed in the same directory where the executable is located, with the `CFBundleIdentifier` and `CFBundleExecutable` fields populated
+* If the app is not packaged as a full blown app bundle, an `Info.plist` file must be be placed in the same directory where the executable is located, with the `CFBundleIdentifier` and `CFBundleExecutable` fields populated
+* Starting with macOS Big Sur 11.4, the executable must be located inside an app bundle or in a directory with name ending with `.app`, e.g. `YourAppName.app`
 
 Please see the [quick start project](https://github.com/SkyhookWireless/location-quick-start-native) as an example of a command line application utilizing the SDK to determine Wi-Fi based location on macOS 10.15+.
 
@@ -370,7 +373,7 @@ The following keys will be added in your `.entitlements` file:
 * Improved geofencing in UMTS and LTE networks
 * Introduced `WPS_load()` and `WPS_unload()` calls
 * Fixed a buffer overflow issue on Linux happening on very large Wi-Fi scans
-* Switched to Secure Transport API on OS X and removed the pre-built OpenSSL libraries from the SDK bundle
+* Switched to Secure Transport API on macOS and removed the pre-built OpenSSL libraries from the SDK bundle
 
 ### Version 4.9.2
 
